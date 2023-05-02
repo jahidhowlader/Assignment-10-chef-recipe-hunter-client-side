@@ -1,6 +1,8 @@
 #home-banner{
     background-image: url('../../assets/banner.png');
-    /* height: 200px; */
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: .2; */
 }

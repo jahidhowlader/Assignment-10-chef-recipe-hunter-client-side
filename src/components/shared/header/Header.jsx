@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="navbar bg-base-100 my-container font-semibold">
+        <section className='fixed top-0 bg-white z-10 w-full shadow-md'> 
+            <header className="navbar my-container font-semibold ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,12 +26,12 @@ const Header = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <img src={logo} alt="" />
+                <img className='w-[140px] md:w-[230px]' src={logo} alt="" />
                 {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>HOME</a></li>
+                    <li><Link to="/">HOME</Link></li>
                     {/* <li tabIndex={0}>
                         <a>
                             Parent
@@ -52,6 +53,7 @@ const Header = () => {
                 {/* <a className="btn">Get started</a> */}
             </div>
         </header>
+        </section>
     );
 };
 

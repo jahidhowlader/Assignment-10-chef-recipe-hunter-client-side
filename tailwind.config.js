@@ -6,9 +6,9 @@ export default {
   ],
   theme: {
     colors: {
-      'purple': '#7e5bef',
       "pink": "#C14679",
-      "btn-hover": "#c14679",
+      "btn-hover": "#A63765",
+      "border-clr": "#A3A3A3",
       'purple-light': '#efedfd',
       'cart-clr': '#f3f3f3',
       'white': '#fff',
@@ -27,7 +27,7 @@ export default {
     },
     letterSpacing:{
       normal: '0',
-      wide: '.025em',
+      wide: '.025rem',
       wider: '.30rem',
       widest: '.50rem',
     },
