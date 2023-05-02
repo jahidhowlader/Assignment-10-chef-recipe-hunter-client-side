@@ -18,3 +18,9 @@ body {
   font-family: 'Great Vibes', cursive;
   ;
 }
+
+@media screen and (max-width: 639px) {
+  body{
+    margin-top: 55px;
+  }
+}

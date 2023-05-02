@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/shared/header/Header";
 import Footer from "../components/shared/footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const Main = () => {
 
@@ -10,6 +11,7 @@ const Main = () => {
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
+            <ToastContainer></ToastContainer>
         </>
     );
 };

@@ -1,6 +1,7 @@
 import logo from '../../../assets/logo.png'
-import cake from '../../../assets/cake.png'
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa";
+
 
 const Header = () => {
     return (
@@ -32,23 +33,13 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to="/">HOME</Link></li>
-                    {/* <li tabIndex={0}>
-                        <a>
-                            Parent
-                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                        </a>
-                        <ul className="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                        </ul>
-                    </li> */}
                     <li><a>GALLERY</a></li>
                     <li><a>BLOG</a></li>
                     <li><a>CONTACT US</a></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                <img src={cake} alt="" />
+                <FaUserCircle className='text-3xl text-pink mr-2'></FaUserCircle>
                 <Link to="/signin" className='border border-pink rounded hover:bg-pink hover:text-white py-1 px-3'>Sign in</Link>
                 {/* <a className="btn">Get started</a> */}
             </div>

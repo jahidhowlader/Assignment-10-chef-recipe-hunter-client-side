@@ -6,7 +6,7 @@ const Home = () => {
         <>
         
         <section id='home-banner' className=''>
-            <div className="lg:grid grid-cols-2 my-container py-40 opacity-90 mt-[55px]">
+            <div className="lg:grid grid-cols-2 my-container py-40 opacity-90 ">
                 <div className='px-5 md:px-0'>
                     <h1 className='text-decorative text-pink text-7xl md:text-[100px] leading-10'>Delicious</h1>
                     <h2 className='font-bold text-2xl md:text-4xl pt-10 pb-5 tracking-wider md:tracking-widest'>CAKES FOR YOU</h2>
