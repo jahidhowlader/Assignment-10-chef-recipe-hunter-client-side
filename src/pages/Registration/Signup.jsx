@@ -122,7 +122,7 @@ const Signup = () => {
                     <form onSubmit={handlerSubmit} className='pt-5'>
                         <div className="form-control w-full ">
                             <label className="label font-bold">Email</label>
-                            <input onChange={handlerEmail} type="email" name='email' value={email} placeholder="Enter your email" className={`input input-bordered w-full focus:border-black ${emailError && 'input-error'} ${email && !emailError && 'input-success focus:border-green' }`} required />
+                            <input onChange={handlerEmail} type="email" name='email' value={email} placeholder="Enter your email" className={`input input-bordered w-full focus:border-black ${emailError && 'input-error focus:border-error-clr'} ${email && !emailError && 'input-success focus:border-green' }`} required />
                             {
                                 emailError && <span className="text-error-clr"><small>{emailError}</small></span>
                             }

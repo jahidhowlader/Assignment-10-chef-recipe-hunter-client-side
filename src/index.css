@@ -9,6 +9,10 @@
   @apply lg:w-[1170px] mx-auto
 }
 
+.my-btn{
+  @apply bg-pink py-5 px-10 my-8 text-white rounded-lg font-semibold hover:bg-btn-hover drop-shadow-xl
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin-top: 75px;

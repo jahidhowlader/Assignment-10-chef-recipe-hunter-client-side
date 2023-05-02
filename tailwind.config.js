@@ -27,7 +27,7 @@ export default {
     },
     letterSpacing:{
       normal: '0',
-      wide: '.025rem',
+      wide: '.20rem',
       wider: '.30rem',
       widest: '.50rem',
     },
