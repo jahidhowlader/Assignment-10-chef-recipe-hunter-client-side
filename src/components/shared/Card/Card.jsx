@@ -12,7 +12,7 @@ const Card = () => {
             offer.map((image, idx) => 
                 <div key={idx} className="card bg-base-100 rounded-none relative hover:shadow-lg hover:rounded py-5 px-5 md:px-0">
                     <div className="card-body items-center text-center p-0">
-                        <img className='border border-border-clr p-3' src={image} alt="" />
+                        <img className='border border-border-clr border-opacity-30 p-3' src={image} alt="" />
                         <h2 className="card-title pt-3 text-2xl tracking-wide">{offerTitle[idx]}</h2>
                         <p className='text-sm pb-2 px-5'>We provide a variety of cupcakes for any party made with high-quality natural ingredients and no preservatives.</p>
                         <button className="border-b-2 font-semibold text-border-clr hover:text-black">READ MORE</button>
