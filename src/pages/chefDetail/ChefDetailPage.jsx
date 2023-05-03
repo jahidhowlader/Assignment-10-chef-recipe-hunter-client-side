@@ -33,7 +33,7 @@ const ChefDetailPage = ({ chefDteails }) => {
                     <div className=''>
                         <div className='border  border-border-clr border-opacity-30 text-center py-12 px-5 relative'>
                             <img className='rounded-full w-[130px] mx-auto' src={picture} alt="" />
-                            <h4 className='font-semibold tracking-wide py-5'>CAROLINE LOPEZ</h4>
+                            <h4 className='font-semibold tracking-wide py-5'>{name}</h4>
                             <p>Quis risus sed vulputate odio ut maecenas.</p>
 
                             <div className="badge badge-secondary absolute top-2 right-2"><span className="flex items-center gap-2"><FaHeart ></FaHeart> {likes}</span></div>
