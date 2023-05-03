@@ -6,11 +6,11 @@ const ChefCard = ({ chef }) => {
     const {_id ,picture, name, experience_years, num_recipes, likes } = chef
 
     return (
-        <div className="card bg-base-100 shadow-xl rounded">
+        <div className="card bg-base-100 shadow md:shadow-xl rounded mx-5 md:mx-0 mb-5 md:mb-0">
 
             <figure className="relative">
-                <img className="w-full h-[270px]" src={picture} alt="" />
-                <div className="badge badge-secondary absolute bottom-2 right-2"><span className="flex items-center gap-2"><FaHeart ></FaHeart> {likes}</span></div>
+                <img className="w-full md:w-full h-[270px]" src={picture} alt="" />
+                <div className="badge badge-secondary absolute top-2 md:bottom-2 right-2"><span className="flex items-center gap-2"><FaHeart ></FaHeart> {likes}</span></div>
 
             </figure>
             <div className="card-body  ">

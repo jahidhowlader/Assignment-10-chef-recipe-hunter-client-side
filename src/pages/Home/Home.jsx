@@ -160,7 +160,7 @@ const Home = () => {
             <section>
                 <div id='bg-pettern-about' className='pb-32'>
             <h1 className='text-3xl md:text-6xl text-center font-semibold pb-12 uppercase pt-24'>Our Team</h1>
-                    <div className='grid grid-cols-4 gap-5 my-container justify-center'>
+                    <div className='md:grid md:grid-cols-4 md:gap-5 my-container justify-center'>
                         {
                             chefs && chefs.map(chef => <ChefCard
                                 key={chef._id}

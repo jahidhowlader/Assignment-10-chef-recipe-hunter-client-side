@@ -1,12 +1,14 @@
 import './ChefDetailPage.css'
-import { FaHeart } from 'react-icons/fa';
+import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
 import RecipeCard from '../../components/shared/recipeCard/RecipeCard';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import Rating from 'react-rating';
 
 const ChefDetailPage = ({ chefDteails }) => {
 
-    const { _id, picture, name, experience_years, num_recipes, likes, recipe_item } = chefDteails
+    const { _id, picture, name, experience_years, num_recipes, likes, recipe_item, ratings } = chefDteails
+    console.log(ratings);
 
     // All State is here
     const [favorite, setFavorite] = useState(false)
@@ -55,16 +57,27 @@ const ChefDetailPage = ({ chefDteails }) => {
                     <div className=''>
                         <div className='border  border-border-clr border-opacity-30 text-center py-12 px-5 relative'>
                             <img className='rounded-full w-[130px] h-[130px] mx-auto' src={picture} alt="" />
-                            <h4 className='font-semibold tracking-wide py-5'>{name}</h4>
+                            <h4 className='font-semibold tracking-wide pt-5'>{name}</h4>
                             <p>Quis risus sed vulputate odio ut maecenas.</p>
 
                             <button onClick={handlerReact} disabled={favorite}>
-                            <div className={`badge ${favorite ? '' : 'badge-secondary'} absolute top-2 right-2`}><span className="flex items-center gap-2"><FaHeart ></FaHeart></span></div>
+                                <div className={`badge ${favorite ? '' : 'badge-secondary'} absolute top-2 right-2`}><span className="flex items-center gap-2"><FaHeart ></FaHeart></span></div>
                             </button>
-                            
+
                             <div className="mt-2"><span className="font-semibold">Experience: </span>{experience_years} years</div>
                             <p className="text-sm"><span className="font-semibold">Number of recipes:</span> {num_recipes}</p>
-                            <div className="badge badge-secondary badge-outline mt-2"><span className="flex items-center gap-2"><FaHeart ></FaHeart> {totalLike}</span></div>
+
+                            {/* React Rating */}
+                            <div className='mt-2'>
+                                <Rating
+                                    placeholderRating={ratings}
+                                    readonly
+                                    emptySymbol={<FaRegStar className='text-pink text-xl'></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-pink text-xl'></FaStar>}
+                                    fullSymbol={<FaStar className='text-xl'></FaStar>}
+                                />
+                                <p className='font-semibold text-pink'>{ratings}</p>
+                            </div>
                         </div>
 
                         <div className='py-12'>
