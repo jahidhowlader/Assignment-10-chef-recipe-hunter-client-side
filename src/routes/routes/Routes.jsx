@@ -5,12 +5,17 @@ import Signin from '../../pages/Signin/Signin';
 import Signup from '../../pages/Registration/Signup';
 import ChefDetails from '../../layout/ChefDetails';
 import PrivateRoute from '../privateRoute/PrivateRoute';
+import Error from '../../components/shared/Error404/Error';
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
         children:[
+            {
+                path: '*',
+                element: <Error></Error>
+            },
             {
                 path: '/',
                 element: <Home></Home>,
