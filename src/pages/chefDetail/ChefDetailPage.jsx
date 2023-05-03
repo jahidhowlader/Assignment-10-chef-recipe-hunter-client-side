@@ -8,7 +8,6 @@ import Rating from 'react-rating';
 const ChefDetailPage = ({ chefDteails }) => {
 
     const { _id, picture, name, experience_years, num_recipes, likes, recipe_item, ratings } = chefDteails
-    console.log(ratings);
 
     // All State is here
     const [favorite, setFavorite] = useState(false)

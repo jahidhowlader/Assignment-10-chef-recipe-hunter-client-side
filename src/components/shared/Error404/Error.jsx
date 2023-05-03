@@ -1,4 +1,3 @@
-import React from 'react';
 import Lottie from 'lottie-react'
 import Error404 from '../../../assets/error404.json'
 

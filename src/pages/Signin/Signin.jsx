@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
@@ -23,6 +23,10 @@ const Signin = () => {
         setShowPassword(!showPassword)
     }
 
+    // Set Location for navigate
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+
     // Handler Signin
     const handlerSignin = e => {
 
@@ -35,7 +39,7 @@ const Signin = () => {
         signinUser(email, password)
             .then(() => {
                 form.reset()
-                nevigate('/')
+                nevigate(from, {replace: true})
                 toast.success('Successfully Login', {
                     position: "top-right",
                     autoClose: 5000,
@@ -155,7 +159,7 @@ const Signin = () => {
                         </button>
                     </div>
 
-                    <p className='text-center mt-5 lg:mb-24'>Do not have an account? Please<Link to='/signup' className='font-semibold text-pink'> Sign Up</Link></p>
+                    <p className='text-center mt-5 lg:mb-24'>Do not have an account? Please<Link to='/signup' state={location.state} className='font-semibold text-pink'> Sign Up</Link></p>
                 </div>
             </div>
             <div className='bg-gray flex justify-center items-center relative'>

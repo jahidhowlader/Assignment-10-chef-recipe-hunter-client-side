@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +25,13 @@ const Signup = () => {
     const [showPassword, setShowPassword] = useState(false)
     // const [confirmPassword, setConfirmPassword] = useState('')
     // const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+    // Terms And condition state and Handler
+    const [accepted, setAccepted] = useState(false)
+
+    const handlerterms = event => {
+        setAccepted(event.target.checked)
+    }
 
 
     const handlerEmail = e => {
@@ -77,11 +84,14 @@ const Signup = () => {
     //     setShowConfirmPassword(!showConfirmPassword)
     // }
 
+    // Set Location for Navigate
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+
     // Handler Form Submit
     const handlerSubmit = e => {
 
         e.preventDefault()
-
         const form = e.target
 
         if (!email) {
@@ -108,7 +118,7 @@ const Signup = () => {
                 .then(() => {
                     setEmail('')
                     setPassword('')
-                    nevigate('/')
+                    nevigate(from, { replace: true })
                     toast.success('Successfully created Account', {
                         position: "top-right",
                         autoClose: 5000,
@@ -182,8 +192,16 @@ const Signup = () => {
 
                         </div> */}
 
+                        <div className="pt-5 flex items-center">
+                            <input onClick={handlerterms} className="accent-pink ml-2 mr-3" type="checkbox" name="accept" />
+                            <small>
+                                <label className="text-pink">
+                                    Accept <span className="font-semibold">Trerms and Condition</span>
+                                </label>
+                            </small>
+                        </div>
 
-                        <input type="submit" value='Sign up' className='bg-pink hover:bg-btn-hover text-white w-full py-2 rounded-lg cursor-pointer mt-5' />
+                        <input type="submit" value='Sign up' className='bg-pink hover:bg-btn-hover text-white w-full py-2 rounded-lg cursor-pointer mt-5' disabled={!accepted ? true : false} />
                     </form>
 
                     <p className='text-center mt-5 lg:mb-24'>You have an account? <Link to='/signin' className='font-semibold text-pink'> Sign in</Link></p>

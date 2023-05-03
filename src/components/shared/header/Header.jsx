@@ -11,13 +11,11 @@ const Header = () => {
     // Context API
     const { user, logout } = useContext(AuthContext)
 
-    // console.log(user);
-
     //  Handler Signout
     const HandlerSignout = () => {
         logout()
             .then(() => {
-                toast.success('Successfully Signout', {
+                toast.success('Signout Successfully', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -38,18 +36,41 @@ const Header = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            {/* <li tabIndex={0}>
-                            <a className="justify-between">
-                                Parent
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li> */}
-                            <li><a>Item 3</a></li>
+                            <li> <NavLink
+                                to="/"
+                                className={({ isActive }) =>
+                                    isActive ? "text-pink" : ""
+                                }
+                            >
+                                HOME
+                            </NavLink></li>
+
+                            <li> <NavLink
+                                to="/gallery"
+                                className={({ isActive }) =>
+                                    isActive ? "text-pink" : ""
+                                }
+                            >
+                                GALLERY
+                            </NavLink></li>
+
+                            <li> <NavLink
+                                to="/blog"
+                                className={({ isActive }) =>
+                                    isActive ? "text-pink" : ""
+                                }
+                            >
+                                BLOG
+                            </NavLink></li>
+
+                            <li> <NavLink
+                                to="/contact"
+                                className={({ isActive }) =>
+                                    isActive ? "text-pink" : ""
+                                }
+                            >
+                                CONTACT US
+                            </NavLink></li>
                         </ul>
                     </div>
                     <img className='w-[140px] md:w-[230px]' src={logo} alt="" />
@@ -92,21 +113,30 @@ const Header = () => {
                         >
                             CONTACT US
                         </NavLink></li>
-
-
-                        <li><Link></Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {
                         user ?
                             <>
-
+                                {user.photoURL ?
+                                    <>
+                                        <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.email}>
+                                            <img className='w-8 h-8 rounded-full mr-2' src={user.photoURL} alt="" />
+                                        </div>
+                                    </> :
+                                    <>
+                                        <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.email}>
+                                            <FaUserCircle className='text-3xl text-pink mr-2 tooltip' ></FaUserCircle>
+                                        </div>
+                                    </>
+                                }
                                 <Link onClick={HandlerSignout} to="/signin" className='border border-pink rounded hover:bg-pink hover:text-white py-1 px-3'>Sign out</Link>
                             </> :
                             <>
-                                <FaUserCircle className='text-3xl text-pink mr-2'></FaUserCircle>
+                            <button >
                                 <Link to="/signin" className='border border-pink rounded hover:bg-pink hover:text-white py-1 px-3'>Sign in</Link>
+                            </button>
                             </>
                     }
                     {/* <a className="btn">Get started</a> */}
