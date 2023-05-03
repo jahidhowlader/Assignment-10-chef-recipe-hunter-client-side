@@ -25,7 +25,8 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'chef/:_id',
-                element: <ChefDetails></ChefDetails>
+                element: <ChefDetails></ChefDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/chef/${params._id}`)
             }
         ]
     }

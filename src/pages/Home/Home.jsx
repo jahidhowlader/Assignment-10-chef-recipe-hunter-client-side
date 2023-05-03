@@ -163,7 +163,7 @@ const Home = () => {
             <h1 className='text-3xl md:text-6xl text-center font-semibold pb-12 uppercase pt-24'>Our Team</h1>
                     <div className='grid grid-cols-4 gap-5 my-container justify-center'>
                         {
-                            chefs.map(chef => <ChefCard
+                            chefs && chefs.map(chef => <ChefCard
                                 key={chef._id}
                                 chef={chef}
                             ></ChefCard>)

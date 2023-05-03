@@ -9,7 +9,7 @@ const ChefCard = ({ chef }) => {
         <div className="card bg-base-100 shadow-xl rounded">
 
             <figure className="relative">
-                <img className="w-full h-[270px]" src={picture} alt="Shoes" />
+                <img className="w-full h-[270px]" src={picture} alt="" />
                 <div className="badge badge-secondary absolute bottom-2 right-2"><span className="flex items-center gap-2"><FaHeart ></FaHeart> {likes}</span></div>
 
             </figure>
