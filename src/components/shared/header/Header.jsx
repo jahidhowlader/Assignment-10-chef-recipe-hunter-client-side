@@ -1,5 +1,5 @@
 import logo from '../../../assets/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
@@ -57,17 +57,51 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to="/">HOME</Link></li>
-                        <li><a>GALLERY</a></li>
-                        <li><Link to="/blog">BLOG</Link></li>
-                        <li><Link>CONTACT US</Link></li>
+                        <li> <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? "text-pink" : ""
+                            }
+                        >
+                            HOME
+                        </NavLink></li>
+
+                        <li> <NavLink
+                            to="/gallery"
+                            className={({ isActive }) =>
+                                isActive ? "text-pink" : ""
+                            }
+                        >
+                            GALLERY
+                        </NavLink></li>
+
+                        <li> <NavLink
+                            to="/blog"
+                            className={({ isActive }) =>
+                                isActive ? "text-pink" : ""
+                            }
+                        >
+                            BLOG
+                        </NavLink></li>
+
+                        <li> <NavLink
+                            to="/contact"
+                            className={({ isActive }) =>
+                                isActive ? "text-pink" : ""
+                            }
+                        >
+                            CONTACT US
+                        </NavLink></li>
+
+
+                        <li><Link></Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {
                         user ?
                             <>
-                                
+
                                 <Link onClick={HandlerSignout} to="/signin" className='border border-pink rounded hover:bg-pink hover:text-white py-1 px-3'>Sign out</Link>
                             </> :
                             <>
