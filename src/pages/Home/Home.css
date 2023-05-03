@@ -24,6 +24,13 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+#bg-pettern-about {
+    background-image: url('../../assets/bg-pattern.jpg');
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 #bg-1 {
     background-image: url('../../assets/bg-1.jpg');
@@ -50,5 +57,11 @@
         opacity: .2;
         z-index: 1;
         position: relative;
+    }
+    #bg-pettern {
+        height: 545px;
+    }
+    #bg-2 {
+        height: 300px;
     }
 }

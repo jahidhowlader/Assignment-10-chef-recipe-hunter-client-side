@@ -3,6 +3,7 @@ import Main from '../../layout/Main';
 import Home from '../../pages/Home/Home';
 import Signin from '../../pages/Signin/Signin';
 import Signup from '../../pages/Registration/Signup';
+import ChefDetails from '../../layout/ChefDetails';
 
 const Routes = createBrowserRouter([
     {
@@ -11,7 +12,8 @@ const Routes = createBrowserRouter([
         children:[
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/')
             },
             {
                 path: 'signin',
@@ -20,6 +22,10 @@ const Routes = createBrowserRouter([
             {
                 path:'signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: 'chef/:_id',
+                element: <ChefDetails></ChefDetails>
             }
         ]
     }

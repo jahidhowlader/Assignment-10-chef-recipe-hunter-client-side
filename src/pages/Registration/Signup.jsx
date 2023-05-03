@@ -1,4 +1,4 @@
-import {  useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Signup = () => {
 
     // Context API
-    const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
 
     // Navigate Varriable
     const nevigate = useNavigate()
@@ -82,8 +82,28 @@ const Signup = () => {
 
         e.preventDefault()
 
-        if(email && password && !emailError && !passwordError){
+        const form = e.target
 
+        if (!email) {
+            setEmailError('Invaild Email Address')
+            form.email.focus()
+            return
+
+        } else if (emailError) {
+            setEmailError('Invaild Email Address')
+            form.email.focus()
+            return
+        }
+        else if (!password) {
+            setPasswordError('Password will be at list 6 character..')
+            form.password.focus()
+            return
+
+        } else if (passwordError) {
+            form.password.focus()
+            return
+
+        } else {
             createUser(email, password)
                 .then(() => {
                     setEmail('')
@@ -98,12 +118,16 @@ const Signup = () => {
                         draggable: true,
                         progress: undefined,
                         theme: "colored",
-                        });
+                    });
                 })
                 .catch(e => {
-                    setError(e.message)
+                    const errorMessage = e.code.slice(5, (e.code.length))
+                    setError(errorMessage)
+                    if (errorMessage == 'email-already-in-use') {
+                        form.email.focus()
+                        setEmailError(e.code.slice(5, (e.code.length)))
+                    }
                 })
-           
         }
     }
 
@@ -111,9 +135,9 @@ const Signup = () => {
         <section className='grid lg:grid-cols-2 h-[100vh]'>
             <div className='flex justify-center items-center bg-white'>
                 <div className='w-[400px]'>
-                    
+
                     {
-                        error && <span className='my-5 text-error-clr bg-error-clr py-3 block bg-opacity-20 font-bold px-2'>{error}</span>
+                        error && <span className='my-5 text-error-clr bg-error-clr py-3 block bg-opacity-20 font-bold px-2 text-center rounded'>{error}</span>
                     }
 
                     <h3 className='text-4xl font-bold pb-6'>Welcome Back</h3>
@@ -122,7 +146,7 @@ const Signup = () => {
                     <form onSubmit={handlerSubmit} className='pt-5'>
                         <div className="form-control w-full ">
                             <label className="label font-bold">Email</label>
-                            <input onChange={handlerEmail} type="email" name='email' value={email} placeholder="Enter your email" className={`input input-bordered w-full focus:border-black ${emailError && 'input-error focus:border-error-clr'} ${email && !emailError && 'input-success focus:border-green' }`} required />
+                            <input onChange={handlerEmail} type="email" name='email' value={email} placeholder="Enter your email" className={`input input-bordered w-full focus:border-black ${emailError && 'input-error focus:border-error-clr'} ${email && !emailError && 'input-success focus:border-green'}`} />
                             {
                                 emailError && <span className="text-error-clr"><small>{emailError}</small></span>
                             }
@@ -131,7 +155,7 @@ const Signup = () => {
                         <div className="form-control w-full pt-2 ">
                             <label className="label font-bold">Password</label>
                             <div className='relative'>
-                                <input onChange={hadlerPassword} type={`${showPassword ? 'text' : 'password'}`} placeholder="Enter your password" name='password' value={password} className={`input input-bordered w-full focus:border-black ${passwordError && 'input-error focus:border-error-clr'} ${password && !passwordError && 'input-success focus:border-green' }`} />
+                                <input onChange={hadlerPassword} type={`${showPassword ? 'text' : 'password'}`} placeholder="Enter your password" name='password' value={password} className={`input input-bordered w-full focus:border-black ${passwordError && 'input-error focus:border-error-clr'} ${password && !passwordError && 'input-success focus:border-green'}`} />
                                 {
                                     showPassword ?
                                         <FaEyeSlash onClick={toggoleShowPassword} className='absolute top-2 right-3 bg-white pl-2 cursor-pointer text-3xl' ></FaEyeSlash> :
@@ -154,8 +178,6 @@ const Signup = () => {
                                         <FaEyeSlash onClick={toggoleShowConfirmPassword} className='absolute top-2 right-3 bg-white pl-2 cursor-pointer text-3xl' ></FaEyeSlash> :
                                         <FaEye onClick={toggoleShowConfirmPassword} className='absolute top-2 right-3 bg-white pl-2 cursor-pointer text-3xl' ></FaEye>
                                 }
-
-
                             </div>
 
                         </div> */}

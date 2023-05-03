@@ -10,7 +10,7 @@
 }
 
 .my-btn{
-  @apply bg-pink py-5 px-10 my-8 text-white rounded-lg font-semibold hover:bg-btn-hover drop-shadow-xl
+  @apply bg-pink py-4 md:py-5 px-10 my-8 text-white rounded-lg font-semibold hover:bg-btn-hover drop-shadow-xl
 }
 
 body {

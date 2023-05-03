@@ -32,7 +32,6 @@ const Signin = () => {
         const email = form.email.value
         const password = form.password.value
 
-
         signinUser(email, password)
             .then(() => {
                 form.reset()
@@ -52,7 +51,23 @@ const Signin = () => {
             })
 
             .catch(e => {
-                setError(e.message)
+
+                setError('')
+                const errorMessage = e.code.slice(5, (e.code.length))
+
+                if (errorMessage == 'missing-password') {
+                    form.password.focus()
+                    setError(errorMessage)
+                    return
+
+                } else if (errorMessage == 'wrong-password') {
+                    form.password.focus()
+                    setError(errorMessage)
+                    return
+
+                }
+                setError(errorMessage)
+                form.email.focus()
             })
     }
 
@@ -74,7 +89,7 @@ const Signin = () => {
                 setError('')
             })
             .catch(e => {
-                setError(e.message)
+                setError(e.code)
             })
     }
 
@@ -94,7 +109,7 @@ const Signin = () => {
                     <form onSubmit={handlerSignin} className='pt-5'>
                         <div className="form-control w-full ">
                             <label className="label font-bold">Email</label>
-                            <input type="email" name='email' placeholder="Enter your email" className={`input input-bordered  w-full `} required />
+                            <input type="email" name='email' placeholder="Enter your email" className={`input input-bordered  w-full ${error && 'input-error focus:border-error-clr'}`} />
 
 
                         </div>
@@ -103,7 +118,7 @@ const Signin = () => {
                             <label className="label font-bold">Password</label>
                             <div className='relative'>
 
-                                <input type={`${showPassword ? 'text' : 'password'}`} placeholder="Enter your password" name='password' className={`input input-bordered  w-full  `} />
+                                <input type={`${showPassword ? 'text' : 'password'}`} placeholder="Enter your password" name='password' className={`input input-bordered  w-full ${error && 'input-error focus:border-error-clr'} `} />
                                 {
                                     showPassword ?
                                         <FaEyeSlash onClick={toggoleShowPassword} className='absolute top-2 right-3 bg-white pl-2 cursor-pointer text-3xl' ></FaEyeSlash> :
