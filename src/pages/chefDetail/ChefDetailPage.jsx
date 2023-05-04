@@ -27,7 +27,6 @@ const ChefDetailPage = ({ chefDteails }) => {
         });
     }
 
-
     return (
         <>
             {/* Thumbnail */}
@@ -108,9 +107,3 @@ const ChefDetailPage = ({ chefDteails }) => {
 };
 
 export default ChefDetailPage;
-
-
-// "https://i.ibb.co/PjSZMwj/1.jpg",
-// "https://i.ibb.co/HYg8c7F/3.jpg",
-// "https://i.ibb.co/qn1gCMK/4.jpg",
-// "https://i.ibb.co/BL8V107/5.jpg",

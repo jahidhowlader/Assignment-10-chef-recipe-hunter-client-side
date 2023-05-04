@@ -1,17 +1,6 @@
 
 const RecipeCard = ({ recipe }) => {
-    const { title, img, date, ingredients, cooking_method } = recipe
-
-    // console.log(ingredients);
-    // const test = ingredients.map(item => item)
-    // console.log(test);
-
-    // for (let i of ingredients) {
-    //     console.log(i);
-    // }
-
-    const test = ingredients.map(value => console.log(value))
-    // console.log(test);
+    const { title, img, ingredients, cooking_method } = recipe
 
     return (
         <div className="bg-gray">

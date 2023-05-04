@@ -99,9 +99,9 @@ const Signin = () => {
 
 
     return (
-        <section className='grid lg:grid-cols-2 h-[100vh] mx-5'>
+        <section className='h-[100vh] mx-5'>
             <div className='flex justify-center items-center bg-white'>
-                <div className='lg:w-[400px]'>
+                <div className='lg:w-[400px] mt-32'>
 
                     {
                         error && <span className='my-5 text-error-clr bg-error-clr py-3 block bg-opacity-20 font-bold px-2 text-center'>{error}</span>
@@ -132,14 +132,6 @@ const Signin = () => {
 
                         </div>
 
-                        {/* <div className='flex items-center justify-between py-5'>
-                            <div className='flex '>
-                                <input type="checkbox" />
-                                <small className='pl-2'>Remember for 30 days</small>
-                            </div>
-                            <small className='font-bold cursor-pointer'>Forgot Password</small>
-                        </div> */}
-
                         <input type="submit" value='Sign In' className='bg-pink text-white w-full py-2 rounded-lg cursor-pointer mt-5' />
                     </form>
 
@@ -160,14 +152,6 @@ const Signin = () => {
                     </div>
 
                     <p className='text-center mt-5 lg:mb-24'>Do not have an account? Please<Link to='/signup' state={location.state} className='font-semibold text-pink'> Sign Up</Link></p>
-                </div>
-            </div>
-            <div className='bg-gray flex justify-center items-center relative'>
-                <div className='auth-design'>
-                    <div className='half-circle'>
-                    </div>
-                    <div className='full-circle'>
-                    </div>
                 </div>
             </div>
 

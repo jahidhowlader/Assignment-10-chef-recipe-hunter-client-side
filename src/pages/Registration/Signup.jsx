@@ -24,8 +24,6 @@ const Signup = () => {
     const [password, setPassword] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    // const [confirmPassword, setConfirmPassword] = useState('')
-    // const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
     // Terms And condition state and Handler
     const [accepted, setAccepted] = useState(false)
@@ -34,7 +32,7 @@ const Signup = () => {
         setAccepted(event.target.checked)
     }
 
-
+    // handle email input
     const handlerEmail = e => {
         const emailInput = e.target.value
         setEmail(emailInput)
@@ -46,6 +44,7 @@ const Signup = () => {
         }
     }
 
+    // handle password input
     const hadlerPassword = e => {
         const passwordInput = e.target.value
         setPassword(passwordInput)
@@ -62,28 +61,11 @@ const Signup = () => {
         }
     }
 
-
-    // const handleConfirmPassword = e => {
-    //     const confirmPasswordInpurt = e.target.value
-    //     setConfirmPassword(confirmPasswordInpurt)
-
-    //     if (password !== confirmPasswordInpurt) {
-
-    //         setConfirmPasswordE('password and confirm password does not match')
-    //     } else
-    // }
-
     // pass show and hide handler
     const toggoleShowPassword = () => {
 
         setShowPassword(!showPassword)
     }
-
-    // confirm pass show and hide handler
-    // const toggoleShowConfirmPassword = () => {
-
-    //     setShowConfirmPassword(!showConfirmPassword)
-    // }
 
     // Set Location for Navigate
     const location = useLocation()
@@ -151,9 +133,9 @@ const Signup = () => {
     }
 
     return (
-        <section className='grid lg:grid-cols-2 h-[100vh]'>
+        <section className='h-[100vh]'>
             <div className='flex justify-center items-center bg-white'>
-                <div className='w-[400px]'>
+                <div className='w-[400px] mt-32'>
 
                     {
                         error && <span className='my-5 text-error-clr bg-error-clr py-3 block bg-opacity-20 font-bold px-2 text-center rounded'>{error}</span>
@@ -195,20 +177,6 @@ const Signup = () => {
 
                         </div>
 
-                        {/* <div className="form-control w-full pt-2 ">
-                            <label className="label font-bold">Confirm password</label>
-                            <div className='relative'>
-
-                                <input onChange={handleConfirmPassword} type={`${showConfirmPassword ? 'text' : 'password'}`} name='confirmPassword' placeholder="Confirm password" className={`input input-bordered w-full `} />
-                                {
-                                    showConfirmPassword ?
-                                        <FaEyeSlash onClick={toggoleShowConfirmPassword} className='absolute top-2 right-3 bg-white pl-2 cursor-pointer text-3xl' ></FaEyeSlash> :
-                                        <FaEye onClick={toggoleShowConfirmPassword} className='absolute top-2 right-3 bg-white pl-2 cursor-pointer text-3xl' ></FaEye>
-                                }
-                            </div>
-
-                        </div> */}
-
                         <div className="pt-5 flex items-center">
                             <input onClick={handlerterms} className="accent-pink ml-2 mr-3" type="checkbox" name="accept" />
                             <small>
@@ -222,14 +190,6 @@ const Signup = () => {
                     </form>
 
                     <p className='text-center mt-5 lg:mb-24'>You have an account? <Link to='/signin' className='font-semibold text-pink'> Sign in</Link></p>
-                </div>
-            </div>
-            <div className='bg-gray flex justify-center items-center relative'>
-                <div className='auth-design'>
-                    <div className='half-circle'>
-                    </div>
-                    <div className='full-circle'>
-                    </div>
                 </div>
             </div>
 
