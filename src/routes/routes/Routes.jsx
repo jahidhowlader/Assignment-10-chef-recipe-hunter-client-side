@@ -20,7 +20,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/')
+                loader: () => fetch('https://sweet-bakery-server-jahidhowlader.vercel.app/')
             },
             {
                 path: "blog",
@@ -37,7 +37,7 @@ const Routes = createBrowserRouter([
             {
                 path: 'chef/:_id',
                 element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params._id}`)
+                loader: ({ params }) => fetch(`https://sweet-bakery-server-jahidhowlader.vercel.app/chef/${params._id}`)
             }
         ]
     }

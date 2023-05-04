@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 const Signin = () => {
 
     // Context API
-    const { signinUser, signinWithGoogle } = useContext(AuthContext)
+    const { signinUser, signinWithGoogle, signininWithGithub } = useContext(AuthContext)
 
     // Nevigate Varriable
     const nevigate = useNavigate()
@@ -39,7 +39,7 @@ const Signin = () => {
         signinUser(email, password)
             .then(() => {
                 form.reset()
-                nevigate(from, {replace: true})
+                nevigate(from, { replace: true })
                 toast.success('Successfully Login', {
                     position: "top-right",
                     autoClose: 5000,
@@ -53,7 +53,6 @@ const Signin = () => {
 
                 setError('')
             })
-
             .catch(e => {
 
                 setError('')
@@ -75,10 +74,11 @@ const Signin = () => {
             })
     }
 
+    // Handler Signin with google
     const handlerSigninWithGoogle = () => {
         signinWithGoogle()
             .then(() => {
-                nevigate('/')
+                nevigate(from, { replace: true })
                 toast.success('Successfully Signin', {
                     position: "top-right",
                     autoClose: 5000,
@@ -97,6 +97,28 @@ const Signin = () => {
             })
     }
 
+    // Handler Signin with github
+    const handlerSigninWithGithub = () => {
+        signininWithGithub()
+            .then(() => {
+                nevigate(from, { replace: true })
+                toast.success('Successfully Signin', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+
+                setError('')
+            })
+            .catch(e => {
+                setError(e.code)
+            })
+    }
 
     return (
         <section className='h-[100vh] mx-5'>
@@ -143,7 +165,7 @@ const Signin = () => {
                             </span>
                         </button>
 
-                        <button className='border-2 border-blatext-black mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
+                        <button onClick={handlerSigninWithGithub} className='border-2 border-blatext-black mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
                             <span className='flex justify-center items-center text-black'>
                                 <FaGithub className='mr-2 text-black text-2xl'></FaGithub>
                                 <span className='font-semibold'>Signin on Github</span>
