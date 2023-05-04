@@ -50,9 +50,8 @@
 
 @media screen and (max-width: 640px) {
     #home-banner{
+        
         height: 450px;
-        opacity: .2;
-        z-index: 1;
         position: relative;
     }
     #bg-pettern {
