@@ -1,17 +1,18 @@
-#home-banner{
+#home-banner {
     background-image: url('../../assets/banner.png');
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
- #fresh-cake{
+
+#fresh-cake {
     background-image: url('../../assets/fresh-cake.jpg');
     width: 100%;
     height: 485px;
     background-size: cover;
-    background-repeat: no-repeat;    
- }
+    background-repeat: no-repeat;
+}
 
 #bg-pettern {
     background-image: url('../../assets/bg-pattern.jpg');
@@ -21,6 +22,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
 #bg-pettern-about {
     background-image: url('../../assets/bg-pattern.jpg');
     width: 100%;
@@ -49,14 +51,22 @@
 
 
 @media screen and (max-width: 640px) {
-    #home-banner{
-        
+    #home-banner {
+        background-color: lightgray;
+        background-blend-mode: overlay;
         height: 450px;
         position: relative;
     }
+
     #bg-pettern {
         height: 545px;
     }
+
+    #bg-1 {
+        background-color: lightgray;
+        background-blend-mode: overlay;
+    }
+
     #bg-2 {
         height: 300px;
     }
