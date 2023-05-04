@@ -10,7 +10,6 @@ const Header = () => {
 
     // Context API
     const { user, logout } = useContext(AuthContext)
-    console.log(user);
 
     //  Handler Signout
     const HandlerSignout = () => {

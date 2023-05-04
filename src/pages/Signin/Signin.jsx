@@ -136,14 +136,14 @@ const Signin = () => {
                     </form>
 
                     <div className='flex gap-2 hover-button'>
-                        <button onClick={handlerSigninWithGoogle} className='border-2 border-blue mt-5 w-full py-2 rounded-lg '>
+                        <button onClick={handlerSigninWithGoogle} className='border-2 border-blue mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
                             <span className='flex justify-center items-center text-blue'>
                                 <FaGoogle className='mr-2 text-blue text-2xl'></FaGoogle>
                                 <span className='font-semibold'>Signin on Google</span>
                             </span>
                         </button>
 
-                        <button className='border-2 border-blatext-black mt-5 w-full py-2 rounded-lg '>
+                        <button className='border-2 border-blatext-black mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
                             <span className='flex justify-center items-center text-black'>
                                 <FaGithub className='mr-2 text-black text-2xl'></FaGithub>
                                 <span className='font-semibold'>Signin on Github</span>
