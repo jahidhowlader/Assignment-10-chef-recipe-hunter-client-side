@@ -4,15 +4,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* opacity: .2; */
 }
  #fresh-cake{
     background-image: url('../../assets/fresh-cake.jpg');
     width: 100%;
     height: 485px;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: darken;
+    background-repeat: no-repeat;    
  }
 
 #bg-pettern {

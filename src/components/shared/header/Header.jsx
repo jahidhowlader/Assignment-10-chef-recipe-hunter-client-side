@@ -10,6 +10,7 @@ const Header = () => {
 
     // Context API
     const { user, logout } = useContext(AuthContext)
+    console.log(user);
 
     //  Handler Signout
     const HandlerSignout = () => {
@@ -73,7 +74,7 @@ const Header = () => {
                             </NavLink></li>
                         </ul>
                     </div>
-                    <img className='w-[140px] md:w-[230px]' src={logo} alt="" />
+                    <Link to="/"><img className='w-[140px] md:w-[230px]' src={logo} alt="" /></Link>
                     {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -121,12 +122,12 @@ const Header = () => {
                             <>
                                 {user.photoURL ?
                                     <>
-                                        <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.email}>
+                                        <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.displayName || user.email}>
                                             <img className='w-8 h-8 rounded-full mr-2' src={user.photoURL} alt="" />
                                         </div>
                                     </> :
                                     <>
-                                        <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.email}>
+                                        <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.displayName || user.email}>
                                             <FaUserCircle className='text-3xl text-pink mr-2 tooltip' ></FaUserCircle>
                                         </div>
                                     </>

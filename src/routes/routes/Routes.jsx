@@ -6,12 +6,13 @@ import Signup from '../../pages/Registration/Signup';
 import ChefDetails from '../../layout/ChefDetails';
 import PrivateRoute from '../privateRoute/PrivateRoute';
 import Error from '../../components/shared/Error404/Error';
+import Blog from '../../pages/Blog/Blog';
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        children:[
+        children: [
             {
                 path: '*',
                 element: <Error></Error>
@@ -22,17 +23,21 @@ const Routes = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/')
             },
             {
+                path: "blog",
+                element: <Blog></Blog>
+            },
+            {
                 path: 'signin',
                 element: <Signin></Signin>
             },
             {
-                path:'signup',
+                path: 'signup',
                 element: <Signup></Signup>
             },
             {
                 path: 'chef/:_id',
                 element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/chef/${params._id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params._id}`)
             }
         ]
     }

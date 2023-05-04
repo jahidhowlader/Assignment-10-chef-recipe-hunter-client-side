@@ -7,16 +7,14 @@ import Rating from 'react-rating';
 
 const ChefDetailPage = ({ chefDteails }) => {
 
-    const { _id, picture, name, experience_years, num_recipes, likes, recipe_item, ratings } = chefDteails
+    const { bio, picture, name, experience_years, num_recipes, recipe_item, ratings } = chefDteails
 
     // All State is here
     const [favorite, setFavorite] = useState(false)
-    const [totalLike, setTotalLike] = useState(likes)
 
     // handler React to favorite
     const handlerReact = () => {
         setFavorite(true)
-        setTotalLike(totalLike + 1)
         toast.success('Thank you for contribute', {
             position: "top-right",
             autoClose: 3000,
@@ -44,7 +42,7 @@ const ChefDetailPage = ({ chefDteails }) => {
                 <div className='grid grid-cols-4 gap-5'>
                     {/* Recipe Items */}
                     <div className='col-span-3'>
-                        <div className='grid grid-cols-3 gap-3'>
+                        <div className='grid grid-cols-2 gap-5'>
                             {
                                 recipe_item && recipe_item.map((recipe, idx) => <RecipeCard
                                     key={idx}
@@ -57,7 +55,7 @@ const ChefDetailPage = ({ chefDteails }) => {
                         <div className='border  border-border-clr border-opacity-30 text-center py-12 px-5 relative'>
                             <img className='rounded-full w-[130px] h-[130px] mx-auto' src={picture} alt="" />
                             <h4 className='font-semibold tracking-wide pt-5'>{name}</h4>
-                            <p>Quis risus sed vulputate odio ut maecenas.</p>
+                            <p >{bio}</p>
 
                             <button onClick={handlerReact} disabled={favorite}>
                                 <div className={`badge ${favorite ? '' : 'badge-secondary'} absolute top-2 right-2`}><span className="flex items-center gap-2"><FaHeart ></FaHeart></span></div>

@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
 
@@ -93,6 +94,7 @@ const Signup = () => {
 
         e.preventDefault()
         const form = e.target
+        const photo = form.photo.value
 
         if (!email) {
             setEmailError('Invaild Email Address')
@@ -115,6 +117,13 @@ const Signup = () => {
 
         } else {
             createUser(email, password)
+                .then((userCredential) => {
+                  
+                    updateProfile(userCredential.user, {
+                        displayName: email.split('@')[0] || userCredential.user.email,
+                        photoURL: photo
+                    })
+                })
                 .then(() => {
                     setEmail('')
                     setPassword('')
@@ -174,6 +183,14 @@ const Signup = () => {
                                 {
                                     passwordError && <span className="text-error-clr"><small>{passwordError}</small></span>
                                 }
+                            </div>
+
+                        </div>
+                       
+                        <div className="form-control w-full pt-2 ">
+                            <label className="label font-bold">Photo URL</label>
+                            <div className='relative'>
+                                <input type="text" placeholder="Enter your PhotoURL" name='photo' className="input input-bordered w-full focus:border-black" />
                             </div>
 
                         </div>
