@@ -5,7 +5,6 @@ import { ToastContainer } from "react-toastify";
 
 const Main = () => {
 
-
     return (
         <>
             <Header></Header>

@@ -16,6 +16,11 @@ const Signup = () => {
 
     // All State Here
     const [error, setError] = useState('')
+
+    // Name Validation
+    const [userName, setUserName] = useState('')
+    const [userNameError, setUserNameError] = useState('')
+
     // Email Validation
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState('')
@@ -28,8 +33,16 @@ const Signup = () => {
     // Terms And condition state and Handler
     const [accepted, setAccepted] = useState(false)
 
+    // Handler Terms And Condition
     const handlerterms = event => {
         setAccepted(event.target.checked)
+    }
+
+    // handle name input
+    const handlerUserName = e => {
+        const userNameInput = e.target.value
+        setUserName(userNameInput)
+        setUserNameError('')
     }
 
     // handle email input
@@ -76,9 +89,15 @@ const Signup = () => {
 
         e.preventDefault()
         const form = e.target
+        const name = form.name.value
         const photo = form.photo.value
 
-        if (!email) {
+        if (!name) {
+            setUserNameError('Username is Required')
+            form.name.focus()
+            return
+
+        } else if (!email) {
             setEmailError('Invaild Email Address')
             form.email.focus()
             return
@@ -100,13 +119,14 @@ const Signup = () => {
         } else {
             createUser(email, password)
                 .then((userCredential) => {
-                  
+
                     updateProfile(userCredential.user, {
-                        displayName: email.split('@')[0] || userCredential.user.email,
+                        displayName: userName,
                         photoURL: photo
                     })
                 })
                 .then(() => {
+                    setUserName('')
                     setEmail('')
                     setPassword('')
                     nevigate(from, { replace: true })
@@ -145,6 +165,15 @@ const Signup = () => {
                     <p>Welcome Back, Please enter your details.</p>
 
                     <form onSubmit={handlerSubmit} className='pt-5'>
+
+                        <div className="form-control w-full ">
+                            <label className="label font-bold">Name</label>
+                            <input onChange={handlerUserName} type="text" name='name' placeholder="Enter your Name" value={userName} className={`input input-bordered w-full focus:border-black ${userNameError && 'input-error focus:border-error-clr'} ${userName && !userNameError && 'input-success focus:border-green'}`} />
+                            {
+                                userNameError && <span className="text-error-clr"><small>{userNameError}</small></span>
+                            }
+                        </div>
+
                         <div className="form-control w-full ">
                             <label className="label font-bold">Email</label>
                             <input onChange={handlerEmail} type="email" name='email' value={email} placeholder="Enter your email" className={`input input-bordered w-full focus:border-black ${emailError && 'input-error focus:border-error-clr'} ${email && !emailError && 'input-success focus:border-green'}`} />
@@ -166,11 +195,10 @@ const Signup = () => {
                                     passwordError && <span className="text-error-clr"><small>{passwordError}</small></span>
                                 }
                             </div>
-
                         </div>
-                       
+
                         <div className="form-control w-full pt-2 ">
-                            <label className="label font-bold">Photo URL</label>
+                            <label className="label font-bold">Photo URL <small>(Optional)</small></label>
                             <div className='relative'>
                                 <input type="text" placeholder="Enter your PhotoURL" name='photo' className="input input-bordered w-full focus:border-black" />
                             </div>

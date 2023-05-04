@@ -176,7 +176,6 @@ const Signin = () => {
                     <p className='text-center mt-5 lg:mb-24'>Do not have an account? Please<Link to='/signup' state={location.state} className='font-semibold text-pink'> Sign Up</Link></p>
                 </div>
             </div>
-
         </section>
     );
 };
