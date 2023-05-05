@@ -8,6 +8,9 @@ import aboutThumbnail from '../../assets/about.jpg'
 import ChefCard from '../../components/shared/chefCard/chefCard';
 import { useLoaderData } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+import Aos from 'aos';
+
+Aos.init()
 
 const Home = () => {
 
@@ -15,7 +18,10 @@ const Home = () => {
 
     return (
         <>
-            <section id='home-banner' className=''>
+            <section data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+                id='home-banner' className=''>
                 <div className="lg:grid grid-cols-2 my-container py-20 md:py-40  ">
                     <div className='px-5 md:px-0'>
                         <h1 className='text-decorative text-pink text-7xl md:text-[100px] leading-10'>Delicious</h1>
@@ -27,7 +33,9 @@ const Home = () => {
             </section>
 
             {/* Fresh Cake Section */}
-            <section className='md:-mt-12 mt-5 mb-12 mx-5 md:mx-0'>
+            <section data-aos="fade-up"
+                data-aos-duration="1000"
+                className='md:-mt-12 mt-5 mb-12 mx-5 md:mx-0'>
                 <div className='my-container'>
                     <div id='fresh-cake' className='border-8 border-gray pt-12'>
                         <div className='flex justify-center'>
@@ -44,7 +52,9 @@ const Home = () => {
             </section>
 
             {/* What We Offer */}
-            <section className='my-container md:py-16'>
+            <section data-aos="fade-up"
+                data-aos-duration="1000"
+                className='my-container md:py-16'>
                 <h1 className='text-3xl md:text-6xl text-center font-semibold'>WHAT WE OFFER</h1>
 
                 <div className='py-5 md:grid md:grid-cols-3'>
@@ -53,7 +63,9 @@ const Home = () => {
             </section>
 
             {/* New Products */}
-            <section className=''>
+            <section
+                data-aos="fade-left"
+                data-aos-duration="1000">
                 <div id='bg-pettern' >
                     <div>
                         <h1 className='text-3xl md:text-6xl text-center font-semibold pt-12 md:pt-32 uppercase'>New Products</h1>
@@ -69,9 +81,14 @@ const Home = () => {
 
             {/* Why Choose Me */}
             <section className='py-12 md:py-32 px-5 md:px-0'>
-                <h1 className='text-3xl md:text-6xl font-semibold text-center uppercase'>WHY CHOOSE ME</h1>
+                <h1 data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000"
+                    className='text-3xl md:text-6xl font-semibold text-center uppercase'>WHY CHOOSE ME</h1>
                 <div className='md:grid md:grid-cols-3 items-center my-container pt-12 gap-8'>
-                    <div>
+                    <div
+                        data-aos="fade-right"
+                        data-aos-duration="1000">
                         <div className='md:flex items-center gap-6'>
                             <div className='text-center md:text-right'>
                                 <div className='flex justify-center'>
@@ -95,9 +112,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='hidden md:block'>
-                        <img src={strawberry} alt="" />
+                        <img style={{ height: '100%', width: '100%' }} src={strawberry} alt="strawberry" />
                     </div>
-                    <div>
+                    <div
+                        data-aos="fade-left"
+                        data-aos-duration="1000">
                         <div className='md:flex items-center gap-6'>
                             <div className='flex justify-center'>
                                 <FaServicestack className='text-6xl text-pink block md:hidden mb-5 mt-12'></FaServicestack>
@@ -125,7 +144,10 @@ const Home = () => {
             </section>
 
             {/* Summer Sell */}
-            <section id='bg-1'>
+            <section
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                id='bg-1'>
                 <div className='my-container md:grid md:grid-cols-5'>
                     <div className='pt-20 col-span-2 mx-5 md:mx-0 text-center md:text-left'>
                         <h1 className='text-3xl md:text-6xl font-semibold pt-16 uppercase'>Summer Sale</h1>
@@ -140,10 +162,13 @@ const Home = () => {
             <section className='py-12 md:py-32 mx-5 md:mx-0'>
                 <h1 className='text-3xl md:text-6xl text-center font-semibold pb-12 uppercase'>About Us</h1>
                 <div className='md:grid md:grid-cols-2 gap-5 my-container' >
-                    <div>
-                        <img src={aboutThumbnail} alt="" />
+                    <div data-aos="fade-right"
+                        data-aos-duration="1000">
+                        <img style={{ height: '100%', width: '100%' }} style={{ height: 'auto', width: 'auto' }} src={aboutThumbnail} alt="aboutThumbnail" />
                     </div>
-                    <div className='relative text-center md:text-left pt-5 md:pt-0'>
+                    <div data-aos="fade-left"
+                        data-aos-duration="1000"
+                        className='relative text-center md:text-left pt-5 md:pt-0'>
                         <div className='border-8 opacity-10 w-[250px] h-[350px] hidden md:block'></div>
                         <div className='md:w-3/4 md:absolute top-14 md:left-28 bg-white'>
                             <h3 className='text-xl font-semibold'>ENSURING THE BEST ATMOSPHERE FOR EVERYONE</h3>
@@ -175,7 +200,8 @@ const Home = () => {
             </LazyLoad>
 
             {/* All Kind of Cakes */}
-            <section id='bg-2' className='flex justify-center items-center'>
+            <section 
+              id='bg-2' className='flex justify-center items-center'>
                 <div className='my-container text-center'>
                     <div>
                         <h2 className='text-decorative text-pink text-3xl md:text-5xl'>Unique Flavors and Fresh Ingredients</h2>

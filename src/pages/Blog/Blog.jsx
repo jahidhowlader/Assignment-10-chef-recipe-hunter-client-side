@@ -8,12 +8,12 @@ const ref = createRef()
 const Blog = () => {
     return (
         <LazyLoad threshold={0.95}>
-            <div className='my-container py-24'>
-                <div className='font-bold flex gap-2 justify-end items-center pb-3'>Downlnload PDF <Pdf targetRef={ref} filename="code-example.pdf">
+            <div className='my-container py-24 px-5'>
+                <div className='font-bold flex gap-2 justify-end items-center pb-3 pr-5 md:pr-0'>Downlnload PDF <Pdf targetRef={ref} filename="code-example.pdf">
                     {({ toPdf }) => <button onClick={toPdf} className='text-pink'><FaDownload></FaDownload> </button>}
                 </Pdf> </div>
 
-                <div ref={ref} className='space-y-10'>
+                <div ref={ref} className='space-y-4 md:space-y-10'>
                     <div className='bg-gray p-5 rounded font-semibold'>
                         <p className='text-xl'>1. Tell us the differences between uncontrolled and controlled components.</p>
                         <small>Answer: An uncontrolled component is a component where the form data is handled by the DOM, rather than by the React component. This means that the components state is managed internally by the browser, and the React component does not have direct control over it. In an uncontrolled component, the data is retrieved from the DOM using a ref, and any updates to the data are handled by the browser. <br /><br /> A controlled component, on the other hand, is a component where the form data is handled by the React component. This means that the components state is managed by the React component, and any updates to the data are managed through props and state.</small>

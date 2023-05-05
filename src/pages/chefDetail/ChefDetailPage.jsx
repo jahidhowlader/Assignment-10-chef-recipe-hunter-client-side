@@ -28,9 +28,10 @@ const ChefDetailPage = ({ chefDteails }) => {
                             }
                         </div>
                     </div>
-                    <div className=''>
+                    <div data-aos="fade-left"
+                        data-aos-duration="1000">
                         <div className='border  border-border-clr border-opacity-30 text-center py-12 px-5'>
-                            <img className='rounded-full w-[130px] h-[130px] mx-auto' src={picture} alt="" />
+                            <img className='rounded-full w-[130px] h-[130px] mx-auto' src={picture} alt={name} />
                             <h4 className='font-semibold tracking-wide pt-5'>{name}</h4>
                             <p >{bio}</p>
 

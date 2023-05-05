@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             return unsubscriber
         }
-    }, [])
+    }, [user])
 
     const authInfo = {
         user,

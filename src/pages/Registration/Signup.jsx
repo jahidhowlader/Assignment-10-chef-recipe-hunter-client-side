@@ -120,6 +120,7 @@ const Signup = () => {
             createUser(email, password)
                 .then((userCredential) => {
 
+                    // Update Profile function
                     updateProfile(userCredential.user, {
                         displayName: userName,
                         photoURL: photo

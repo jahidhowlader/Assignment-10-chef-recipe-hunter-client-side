@@ -73,7 +73,7 @@ const Header = () => {
                             </NavLink></li>
                         </ul>
                     </div>
-                    <Link to="/"><img className='w-[140px] md:w-[230px]' src={logo} alt="" /></Link>
+                    <Link to="/"><img style={{height: 'auto', width: '230px'}} className='w-[140px] md:w-[230px]' src={logo} alt="Logo" /></Link>
                     {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -122,7 +122,7 @@ const Header = () => {
                                 {user.photoURL ?
                                     <>
                                         <div className='tooltip tooltip-bottom tooltip-secondary' data-tip={user.displayName || user.email}>
-                                            <img className='w-8 h-8 rounded-full mr-2' src={user.photoURL} alt="" />
+                                            <img style={{width: '32px', height: '32px'}} className='w-8 h-8 rounded-full mr-2' src={user.photoURL} alt="user-photo" />
                                         </div>
                                     </> :
                                     <>

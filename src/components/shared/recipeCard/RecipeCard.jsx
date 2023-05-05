@@ -25,8 +25,10 @@ const RecipeCard = ({ recipe }) => {
     }
 
     return (
-        <div className="bg-gray">
-            <img className="w-full" src={img} alt="" />
+        <div data-aos="fade-up"
+        data-aos-duration="1500"
+         className="bg-gray">
+            <img className="w-full" src={img} alt="recipe" />
             <div className="px-5">
                 {/* <small>{date}</small> */}
                 <h3 className="font-semibold opacity-90 text-lg pt-5">{title}</h3>

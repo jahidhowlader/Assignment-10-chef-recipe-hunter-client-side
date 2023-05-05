@@ -17,7 +17,7 @@ const SwiperCard = () => {
         >
             <SwiperSlide className="">
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md relative">
-                    <img src={product1} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product1} alt="Chocolate Truffles" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Chocolate Truffles</h4>
                     <p className="text-pink font-semibold"><span className="line-through mr-2 font-normal text-t-secondary">$30.00</span> $23.00</p>
                     <p className="absolute top-5 right-5 bg-pink px-2 text-white rounded text-sm font-semibold">SALE</p>
@@ -26,14 +26,14 @@ const SwiperCard = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md">
-                    <img src={product2} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product2} alt="Chocolate Puding" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Chocolate Puding</h4>
                     <p className="text-pink font-semibold"> $25.00</p>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md relative">
-                    <img src={product3} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product3} alt="Dark Chocolate Cake" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Dark Chocolate Cake</h4>
                     <p className="text-pink font-semibold"> $15.00</p>
                     <p className="absolute top-5 right-5 bg-black px-2 text-white rounded text-sm font-semibold">NEW</p>
@@ -42,14 +42,14 @@ const SwiperCard = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md">
-                    <img src={product4} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product4} alt="Chocolate Cookies" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Chocolate Cookies</h4>
                     <p className="text-pink font-semibold"> $12.00</p>
                 </div>
             </SwiperSlide>
             <SwiperSlide className="">
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md relative">
-                    <img src={product1} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product1} alt="Chocolate Truffles" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Chocolate Truffles</h4>
                     <p className="text-pink font-semibold"><span className="line-through mr-2 font-normal text-t-secondary">$30.00</span> $23.00</p>
                     <p className="absolute top-5 right-5 bg-pink px-2 text-white rounded text-sm font-semibold">SALE</p>
@@ -58,14 +58,14 @@ const SwiperCard = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md">
-                    <img src={product2} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product2} alt="Chocolate Puding" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Chocolate Puding</h4>
                     <p className="text-pink font-semibold"> $25.00</p>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md relative">
-                    <img src={product3} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product3} alt="Dark Chocolate Cake" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Dark Chocolate Cake</h4>
                     <p className="text-pink font-semibold"> $15.00</p>
                     <p className="absolute top-5 right-5 bg-black px-2 text-white rounded text-sm font-semibold">NEW</p>
@@ -74,7 +74,7 @@ const SwiperCard = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <div className="shadow-2xl w-[270px] h-[350px] flex flex-col justify-center items-center bg-white rounded-md">
-                    <img src={product4} alt="" />
+                    <img style={{height: '100%', width: '100%'}} src={product4} alt="Chocolate Cookies" />
                     <h4 className="text-lg pt-5 font-semibold uppercase">Chocolate Cookies</h4>
                     <p className="text-pink font-semibold"> $12.00</p>
                 </div>
