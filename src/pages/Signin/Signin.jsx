@@ -121,9 +121,9 @@ const Signin = () => {
     }
 
     return (
-        <section className='h-[100vh] mx-5'>
+        <section className='md:h-[100vh] mx-5 md:mx-0'>
             <div className='flex justify-center items-center bg-white'>
-                <div className='lg:w-[400px] mt-32'>
+                <div className='lg:w-[400px] my-12 md:my-32'>
 
                     {
                         error && <span className='my-5 text-error-clr bg-error-clr py-3 block bg-opacity-20 font-bold px-2 text-center'>{error}</span>
@@ -157,7 +157,7 @@ const Signin = () => {
                         <input type="submit" value='Sign In' className='bg-pink text-white w-full py-2 rounded-lg cursor-pointer mt-5' />
                     </form>
 
-                    <div className='flex gap-2 hover-button'>
+                    <div className='flex flex-col md:flex-row gap-2 hover-button'>
                         <button onClick={handlerSigninWithGoogle} className='border-2 border-blue mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
                             <span className='flex justify-center items-center text-blue'>
                                 <FaGoogle className='mr-2 text-blue text-2xl'></FaGoogle>
@@ -165,7 +165,7 @@ const Signin = () => {
                             </span>
                         </button>
 
-                        <button onClick={handlerSigninWithGithub} className='border-2 border-blatext-black mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
+                        <button onClick={handlerSigninWithGithub} className='border-2 border-blatext-black mt-2 md:mt-5 w-full py-2 rounded-lg px-2 lg:px-0'>
                             <span className='flex justify-center items-center text-black'>
                                 <FaGithub className='mr-2 text-black text-2xl'></FaGithub>
                                 <span className='font-semibold'>Signin on Github</span>

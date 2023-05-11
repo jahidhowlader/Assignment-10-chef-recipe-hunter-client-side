@@ -154,9 +154,9 @@ const Signup = () => {
     }
 
     return (
-        <section className='h-[100vh]'>
+        <section className=' mx-5 md:mx-0 py-12 md:py-24'>
             <div className='flex justify-center items-center bg-white'>
-                <div className='w-[400px] mt-32'>
+                <div className='w-[400px]'>
 
                     {
                         error && <span className='my-5 text-error-clr bg-error-clr py-3 block bg-opacity-20 font-bold px-2 text-center rounded'>{error}</span>

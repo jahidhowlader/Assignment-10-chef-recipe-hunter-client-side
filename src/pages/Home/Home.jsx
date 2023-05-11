@@ -64,7 +64,7 @@ const Home = () => {
 
             {/* New Products */}
             <section
-                data-aos="fade-left"
+                data-aos="fade-down"
                 data-aos-duration="1000">
                 <div id='bg-pettern' >
                     <div>
@@ -87,10 +87,10 @@ const Home = () => {
                     className='text-3xl md:text-6xl font-semibold text-center uppercase'>WHY CHOOSE ME</h1>
                 <div className='md:grid md:grid-cols-3 items-center my-container pt-12 gap-8'>
                     <div
-                        data-aos="fade-right"
+                        data-aos="fade-up"
                         data-aos-duration="1000">
                         <div className='md:flex items-center gap-6'>
-                            <div className='text-center md:text-right'>
+                            <div className='text-center md:text-up'>
                                 <div className='flex justify-center'>
                                     <FaBirthdayCake className='text-6xl text-pink block md:hidden mb-5'></FaBirthdayCake>
                                 </div>
@@ -101,7 +101,7 @@ const Home = () => {
                         </div>
                         <hr className='my-12 opacity-10 hidden md:block' />
                         <div className='flex items-center gap-6'>
-                            <div className='text-center md:text-right'>
+                            <div className='text-center md:text-up'>
                                 <div className='flex justify-center'>
                                     <FaTruckMoving className='text-6xl text-pink block md:hidden mb-5 mt-12'></FaTruckMoving>
                                 </div>
@@ -115,14 +115,14 @@ const Home = () => {
                         <img style={{ height: '100%', width: '100%' }} src={strawberry} alt="strawberry" />
                     </div>
                     <div
-                        data-aos="fade-left"
+                        data-aos="fade-down"
                         data-aos-duration="1000">
                         <div className='md:flex items-center gap-6'>
                             <div className='flex justify-center'>
                                 <FaServicestack className='text-6xl text-pink block md:hidden mb-5 mt-12'></FaServicestack>
                             </div>
                             <FaServicestack className='text-9xl text-pink hidden md:block'></FaServicestack>
-                            <div className='text-center md:text-left'>
+                            <div className='text-center md:text-down'>
                                 <h4 className='text-2xl font-semibold tracking-wide'>CATERING SERVICE</h4>
                                 <small className='pt-6'>Our bakery also provides an outstanding catering service for events and special occasions.</small>
                             </div>
@@ -133,7 +133,7 @@ const Home = () => {
                                 <FaCcMastercard className='text-6xl text-pink block md:hidden mb-5 mt-12'></FaCcMastercard>
                             </div>
                             <FaCcMastercard className='text-9xl text-pink hidden md:block'></FaCcMastercard>
-                            <div className='text-center md:text-left'>
+                            <div className='text-center md:text-down'>
                                 <h4 className='text-2xl font-semibold tracking-wide'>ONLINE PAYMENT</h4>
                                 <small className='pt-6'>We accept all kinds of online payments including Visa, MasterCard, American Express credit cards.</small>
                             </div>
@@ -149,7 +149,7 @@ const Home = () => {
                 data-aos-duration="1000"
                 id='bg-1'>
                 <div className='my-container md:grid md:grid-cols-5'>
-                    <div className='pt-20 col-span-2 mx-5 md:mx-0 text-center md:text-left'>
+                    <div className='pt-20 col-span-2 mx-5 md:mx-0 text-center md:text-down'>
                         <h1 className='text-3xl md:text-6xl font-semibold pt-16 uppercase'>Summer Sale</h1>
                         <p className='py-5'><span className='text-decorative text-pink text-5xl'>-20%</span> <span className='tracking-wider font-semibold text-2xl'>ON ALL CAKES</span></p>
                         <p className=''>Purchase our tasty cakes and sweets for your next event or family dinner at our online shop and save more money than anywhere.</p>
@@ -162,13 +162,13 @@ const Home = () => {
             <section className='py-12 md:py-32 mx-5 md:mx-0'>
                 <h1 className='text-3xl md:text-6xl text-center font-semibold pb-12 uppercase'>About Us</h1>
                 <div className='md:grid md:grid-cols-2 gap-5 my-container' >
-                    <div data-aos="fade-right"
+                    <div data-aos="fade-up"
                         data-aos-duration="1000">
-                        <img style={{ height: '100%', width: '100%' }} style={{ height: 'auto', width: 'auto' }} src={aboutThumbnail} alt="aboutThumbnail" />
+                        <img style={{ height: '100%', width: '100%' }} src={aboutThumbnail} alt="aboutThumbnail" />
                     </div>
-                    <div data-aos="fade-left"
+                    <div data-aos="fade-down"
                         data-aos-duration="1000"
-                        className='relative text-center md:text-left pt-5 md:pt-0'>
+                        className='relative text-center md:text-down pt-5 md:pt-0'>
                         <div className='border-8 opacity-10 w-[250px] h-[350px] hidden md:block'></div>
                         <div className='md:w-3/4 md:absolute top-14 md:left-28 bg-white'>
                             <h3 className='text-xl font-semibold'>ENSURING THE BEST ATMOSPHERE FOR EVERYONE</h3>

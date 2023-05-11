@@ -6,3 +6,10 @@
     background-repeat: no-repeat;
     background-blend-mode: darken;
 }
+
+@media screen and (max-width: 640px) {
+    .chef-bg {
+        height: 200px;
+        padding: 50px;
+    }
+}
