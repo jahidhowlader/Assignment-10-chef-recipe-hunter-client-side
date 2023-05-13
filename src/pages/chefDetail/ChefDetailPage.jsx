@@ -3,7 +3,7 @@ import RecipeCard from '../../components/shared/recipeCard/RecipeCard';
 
 const ChefDetailPage = ({ chefDteails }) => {
 
-    const { bio, picture, name, experience_years, num_recipes, recipe_item, ratings, likes } = chefDteails
+    const { bio, picture, name, experience_years, num_recipes, recipe_item,  likes } = chefDteails
 
     return (
         <>

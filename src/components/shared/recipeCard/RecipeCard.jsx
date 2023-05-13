@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaHeart, FaRegStar, FaStar } from "react-icons/fa"
 import Rating from "react-rating"
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const RecipeCard = ({ recipe }) => {
     const { title, img, ingredients, cooking_method, ratings } = recipe
@@ -12,16 +12,12 @@ const RecipeCard = ({ recipe }) => {
     // handler React to favorite
     const handlerReact = () => {
         setFavorite(true)
-        toast.success('Thanks for your contribute', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-        });
+        Swal.fire({
+            title: 'Success!',
+            text: 'Thanks for your contribute',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
     }
 
     return (
