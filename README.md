@@ -2,8 +2,6 @@
 
 ## Live Server Link: [https://sweet-bakery-394f3.web.app/](https://sweet-bakery-394f3.web.app/)
 
-### + text in green All requirement has full filled without Optional (But Highly Recommended):
-
 # Task description
 [1 update ](search the word update)
 ## Main Requirements
